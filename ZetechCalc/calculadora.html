@@ -1,0 +1,30 @@
+<script src="vue.js"></script>
+
+
+<div id="app">
+  <div class="screen">
+    <p class="result">{{ operacion }}</p>
+  </div>
+  <div class="calc">
+    <button @click="append(7)">7</button>
+    <button @click="append(8)">8</button>
+    <button @click="append(9)"style="margin-right: 140px">9</button>
+    <button @click="append(4)">4</button>
+    <button @click="append(5)">5</button>
+    <button @click="append(6)">6</button>
+    <button @click="operator = '*'">*</button>
+    <button @click="operator = '/'">/</button>
+    <button @click="append(1)">1</button>
+    <button @click="append(2)">2</button>
+    <button @click="append(3)">3</button>
+    <button @click="operator='+'">+</button>
+    <button @click="operator='-'">-</button>
+    <button @click="restart()">C</button>
+    <button @click="append(0)">0</button>
+    <!-- <button @click="append('.')" style="margintu-right: 74px">.</button> -->
+    <button @click="result()">=</button>
+  </div>
+</div>
+
+<link href="calculadora.css" rel="stylesheet">
+<script src="calculadora.js"></script>
