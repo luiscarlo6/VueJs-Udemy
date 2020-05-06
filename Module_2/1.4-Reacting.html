@@ -1,0 +1,40 @@
+<script src="vue.js"></script>
+
+<div id="app">
+  <button @:click="counter++">Click me</button>
+  <button v-on:click="counter--">Click me</button>
+  <button v-on:click="secondCounter--">Click me</button>
+  <p>Counter: {{ counter }} | {{ secondCounter }}</p>
+  <p>Result: {{ result() }} | {{ output }}</p>
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      counter: 0,
+      secondCounter: 0
+    },
+    computed:{
+      output: function() {
+        console.log('Computed');
+        return this.counter > 5 ? '>5' : '<5';
+      }
+    },
+    watch :{//Async tasks
+      counter: function(value) {
+        var vm = this;
+        setTimeout(function() {
+          vm.counter = 0;
+        },2000)
+      }
+    },
+    methods: {
+      result() {
+        console.log('Method');
+        return this.counter > 5 ? '>5' : '<5';
+      }
+    }
+   
+  });
+</script>
